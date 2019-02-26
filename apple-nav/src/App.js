@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import NavWrapper from './components/NavWrapper/NavWrapper';
-import SubWrapper from './components/SubWrapper/SubWrapper';
+import Category from './components/Category/Category';
 import data from './data';
 
 class App extends Component {
@@ -28,7 +28,7 @@ class App extends Component {
           this.state.categories.map(category => (
             <Route
                 path={`/${category.route}`}
-                render={ props => <SubWrapper {...props} category={category} /> }
+                render={ props => <Category {...props} category={category} /> }
                 key={category.id}
             />
           ))

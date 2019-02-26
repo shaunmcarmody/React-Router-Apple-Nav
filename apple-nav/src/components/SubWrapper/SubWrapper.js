@@ -3,13 +3,20 @@ import SubNav from '../SubNav/SubNav';
 import './SubWrapper.sass';
 
 const SubWrapper = props => (
-    <section>
+    <div className="header">
         <div className="container">
             {
-                props.category.subcategories.map((sub, i) => <SubNav sub={sub} key={i} />)
+                props.subcategories.map((sub, i) => (
+                    <SubNav
+                        sub={sub}
+                        key={i}
+                        category={props.category}
+                        id={i}
+                    />
+                ))
             }
         </div>
-    </section>
+    </div>
 )
 
 export default SubWrapper;
