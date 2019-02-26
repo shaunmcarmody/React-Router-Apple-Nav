@@ -1,10 +1,10 @@
 import React from 'react';
-import SubNav from './SubNav';
+import SubNav from '../SubNav/SubNav';
 import './SubWrapper.sass';
 
 const SubWrapper = props => (
     <section>
-        <div class="container">
+        <div className="container">
             {
                 props.category.subcategories.map((sub, i) => <SubNav sub={sub} key={i} />)
             }

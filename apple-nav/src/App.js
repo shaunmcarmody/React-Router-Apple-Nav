@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import NavWrapper from './components/NavWrapper';
-import SubWrapper from './components/SubWrapper';
+import NavWrapper from './components/NavWrapper/NavWrapper';
+import SubWrapper from './components/SubWrapper/SubWrapper';
 import data from './data';
 
 class App extends Component {
