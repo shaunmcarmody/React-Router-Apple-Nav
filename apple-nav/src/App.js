@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import NavWrapper from './components/NavWrapper';
 import SubWrapper from './components/SubWrapper';
-import './App.css';
 import data from './data';
 
 class App extends Component {
@@ -28,8 +27,8 @@ class App extends Component {
         {
           this.state.categories.map(category => (
             <Route
-                path={`/${category.title.toLowerCase()}`}
-                render={props => <SubWrapper {...props} category={category} />}
+                path={`/${category.route}`}
+                render={ props => <SubWrapper {...props} category={category} /> }
                 key={category.id}
             />
           ))

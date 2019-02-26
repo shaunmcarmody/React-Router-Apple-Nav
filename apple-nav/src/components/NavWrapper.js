@@ -1,17 +1,20 @@
 import React from 'react';
 import Nav from './Nav';
+import './NavWrapper.sass';
 
 const NavWrapper = props => (
-  <>
-    {
-      props.categories.map(category => (
-        <Nav
-          name={category.title.toLowerCase()}
-          key={category.id}
-        />
-      ))
-    }
-  </>
+  <header>
+    <nav>
+      {
+        props.categories.map(category => (
+          <Nav
+            product={category}
+            key={category.id}
+          />
+        ))
+      }
+    </nav>
+  </header>
 )
 
 export default NavWrapper;

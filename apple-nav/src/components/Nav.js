@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Nav = props => <Link to={`/${props.name.toLowerCase()}`}>{props.name}</Link>
+const Nav = props => <NavLink to={`/${props.product.route}`}>{props.product.title}</NavLink>
 
 export default Nav;
