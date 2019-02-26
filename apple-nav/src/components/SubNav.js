@@ -1,3 +1,5 @@
 import React from 'react';
 
-export default props => <div>MacSubNav</div>
+const SubNav = props => <div>{props.sub}</div>
+
+export default SubNav;

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import NavWrapper from './components/NavWrapper';
+import SubWrapper from './components/SubWrapper';
 import './App.css';
 import data from './data';
 
-export default class extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,10 +21,23 @@ export default class extends Component {
 
   render() {
     return (
-      <Route
-        path="/"
-        component={props => <NavWrapper {...props} categories={this.state.categories} />}
-      />
+      <>
+        <NavWrapper
+          categories={this.state.categories}
+        />
+        {
+          this.state.categories.map(category => (
+            <Route
+                path={`/${category.title.toLowerCase()}`}
+                render={props => <SubWrapper {...props} category={category} />}
+                key={category.id}
+            />
+          ))
+        }
+      </>
+
     )
   }
 }
+
+export default App;
